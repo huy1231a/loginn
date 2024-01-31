@@ -1,0 +1,32 @@
+.siderBar {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  height: 20px;
+  margin: 16px;
+  display: block;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+.menu {
+  color: white;
+  /* font-family: 'Nunito Sans'; */
+  /* font-size: 16px; */
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 2px;
+}
+
+.logo__side {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

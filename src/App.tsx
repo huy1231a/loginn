@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { Layout, Flex } from 'antd'
+import Siderbar from './components/sideBar/siderbar'
+import { Route, Router, Routes, BrowserRouter } from 'react-router-dom'
+import HeaderC from './components/header/header'
+import ProjectPage from './pages/ProjectPage'
+import DashBoardPage from './pages/DashBoardPage'
+
+const { Header, Footer, Content } = Layout
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <BrowserRouter>
+        <Flex gap='middle' wrap='wrap'>
+          <Layout>
+            <Siderbar />
+            <Layout>
+              <Header
+                style={{
+                  background: 'white',
+                  width: '100%',
+                  height: 'auto',
+                }}>
+                <HeaderC />
+              </Header>
+              <Content style={{ background: '#F4F9FD' }}>
+                <Routes>
+                  <Route path='/' Component={DashBoardPage} />
+                  <Route path='/project' Component={ProjectPage} />
+                </Routes>
+              </Content>
+              <Footer>Footer</Footer>
+            </Layout>
+          </Layout>
+        </Flex>
+      </BrowserRouter>
+    </>
+  )
 }
 
-export default App;
+export default App
